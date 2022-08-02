@@ -1,0 +1,88 @@
+{
+	"mugs": [
+		{
+			"id": "5154E9B3-8BD7-3C0A-E142-E4848C147243",
+			"title": "Pradedančiojo sprogdintojo rinkinukas",
+			"description": "Pyyykšt, poookšt, puuuf, paaaf - ar už jūsų langų jau pokši petardos? Už mūsiškių švilpteli viena kita, repetuodama didįjį naujametinį skrydį - pats metas pakalbėti apie tai, kaip namuose pagaminti smagius ir nepavojingus fejerverkus, kitaip tariant konfeti - spalvingų popierėlių lietų. Juo saliutuoti galima tiek naujametę naktį, tiek gimtadienio ar kitos šaunios šventės proga.Užtempiame balioną ant popieriaus tūtos ar puodelio, įberiame vidun spalvotų popierėlių, įtempiame baliono uodegėlę ir staigiai paleidžiame: puuufff - iš dangaus pabyra spalvingas lietus!",
+			"category": "little",
+			"img": "https://www.gimtadieniomuge.lt/wp-content/uploads/2015/12/kur-panaudoti-kaledini-dovanu-popieriu.jpg"
+		},
+		{
+			"id": "D23A657F-CBEC-9639-2E85-7CA56B098603",
+			"title": "Velnių priėdikas",
+			"description": "Sprogalas, kai velniukas ant peties tupi",
+			"category": "little",
+			"img": "https://triratukas.lt/wp-content/uploads/2021/12/Diabelki_FX_Piromax-203-1-300x300.jpg"
+		},
+		{
+			"id": "12A4CD9E-F969-7106-0E70-A8214ED12111",
+			"title": "Molotov'o gėrims",
+			"description": "Praktiškas sprogmuo! Tinkantis ne tik šieno kupetai padegti, bet ir tinkamas vartoti per burną.",
+			"category": "liquid",
+			"img": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2022/03/07/16466751633701.jpg"
+		},
+		{
+			"id": "5F7922A2-19DB-CAD4-4291-1B137C44D066",
+			"title": "Skylės draskyklė",
+			"description": "Puikiai tinka kaimyno automobilio duslintuvui - pritaikyta kurmiarausiams",
+			"category": "mechanical",
+			"img": "https://www.torpeda.lt/image/cache/catalog/Kitos%20Prek%C4%97s/Romeniskos%20Lazdos/ss30d-400x373.jpg"
+		},
+		{
+			"id": "815C5D64-820D-2DCD-10AA-59EE2D0BC780",
+			"title": "Nostalgija",
+			"description": "Šis senas - geras, patikrintas rinkinukas skirtas ne tik prisiminti kojotą.",
+			"category": "mechanical",
+			"img": "https://en.pimg.jp/046/986/532/1/46986532.jpg"
+		},
+		{
+			"id": "9DB881E2-10C5-C379-E7A3-1C5836853892",
+			"title": "Klasika",
+			"description": "Ir viskas tuom pasakyta. Kadangi turime įvairių variantų niekad nežinosi ką gausi.",
+			"category": "mechanical",
+			"img": "https://cdn1.epicgames.com/ue/product/Screenshot/tbrender017-1920x1080-2ba000ddab80254a893e2171f5bf63f2.png?resize=1&w=1920"
+		},
+		{
+			"id": "E9522542-AB55-9279-A13C-03645AE88D28",
+			"title": "Asas.",
+			"description": "Eksperto lygio rinkinukas. Nevartoti per burną!",
+			"category": "liquid",
+			"img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4nAwCw3lVhEXnzHUmnilbpMU-fSkrzjtBHg&usqp=CAU"
+		},
+		{
+			"id": "25D5DF9E-91AA-0358-D7DA-A70C6C448F2A",
+			"title": "Little Big.",
+			"description": "Labiausiai pamėgta mūsų klientų petarda.",
+			"category": "big",
+			"img": "https://m.media-amazon.com/images/M/MV5BYzE4NmUxMGYtMjk2OS00ZDRlLTgzZjYtOTk0ODkzNDk3ZDE1XkEyXkFqcGdeQXVyNDg4MTYxMA@@._V1_.jpg"
+		},
+		{
+			"id": "F1BB0713-A37A-9766-7896-26BDADC62132",
+			"title": "Tiksiukas.",
+			"description": "Dekoratyvinis žadintuvas. Nepatartina trankyti ar mėtyti...",
+			"category": "electronic",
+			"img": "https://mingosounds.com/wp-content/uploads/2021/02/Migo-featured-image-2021-02-24T191708.499-1000x820.jpg"
+		},
+		{
+			"id": "FDEA9082-2D95-F3B3-A5B2-F851EC375AAC",
+			"title": "Kiemo sargis",
+			"description": "Erzina durų skambutis? Turime puikų pasiūlymą! Kiemo sargis įspės apie ateinančius svečius.",
+			"category": "electronic",
+			"img": "https://www.scienceabc.com/wp-content/uploads/ext-www.scienceabc.com/wp-content/uploads/2016/02/Fotolia_64932929_Subscription_Monthly_M.jpg-.jpg"
+		},
+		{
+			"id": "6B09AC86-EBD2-41B1-1733-2AEEFE491165",
+			"title": "Mamka",
+			"description": "Turite kiemą ar didelį kambarį kuris atrodo tuščias? Neturite kiemo ar jūsų kambarys jums per mažas? Abiem atvejais neprašausite!",
+			"category": "big",
+			"img": "https://p26.toutiaoimg.com/origin/pgc-image/93392a3d77464fd298c64d20455d694c?from=pc"
+		},
+		{
+			"id": "A565A92E-71B7-BEC0-EB49-A8E5B52DB31B",
+			"title": "Vintažinis kalendorius.",
+			"description": "Dekoracija ant sienos pradedančiajam sprogdintojui.",
+			"category": "little",
+			"img": "https://previews.123rf.com/images/popcar/popcar1710/popcar171000021/88647939-retro-pin-up-girl-sitting-on-the-bomb-.jpg"
+		}
+	]
+}

@@ -5,8 +5,17 @@ module.exports = {
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "airbnb",
+        "airbnb/hooks"
     ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "paths": ["src"],
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    },
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -18,5 +27,12 @@ module.exports = {
         "react"
     ],
     "rules": {
+        "react/prop-types": [0],
+        "newline-before-return": [1],
+        "import/prefer-default-export": [0],
+        "react/function-component-definition": [1, {
+            "namedComponents": "arrow-function"
+        }],
+        "react/jsx-no-duplicate-props": [1, { "ignoreCase": false }]
     }
 }
