@@ -7,10 +7,10 @@ export const Link = styled(NavLink)(({ theme }) => ({
   alignItems: 'center',
   padding: theme.spacing(0, 2),
   textDecoration: 'none',
-  color: theme.palette.grey[200],
+  color: theme.palette.warning.light,
 
   '&.active': {
-    boxShadow: `inset 0 -4px 0 ${theme.palette.common.white}`,
+    boxShadow: `inset 0 -4px 0 ${theme.palette.warning.light}`,
   },
 
   ':hover': {

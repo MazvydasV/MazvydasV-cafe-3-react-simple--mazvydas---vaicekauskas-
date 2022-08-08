@@ -12,8 +12,8 @@ import * as Nav from './components';
 
 const pages = [
   { text: 'Pagrindinis', to: '/' },
-  { text: 'Šeimoms', to: '/pottery' },
-  { text: 'Pradedantiesiems sprogdintojams', to: '/cup-shelf' },
+  { text: 'Šeimoms', to: '/family' },
+  { text: 'Pradedantiesiems sprogdintojams', to: '/bomber' },
 ];
 
 const Navbar = () => {
@@ -21,7 +21,7 @@ const Navbar = () => {
 
   return (
     <AppBar position="fixed">
-      <Toolbar sx={{ justifyContent: 'space-between' }}>
+      <Toolbar sx={{ justifyContent: 'space-between', color: 'red' }}>
         <IconButton
           size="large"
           edge="start"

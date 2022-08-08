@@ -6,10 +6,7 @@ import {
 } from 'react-router-dom';
 import { Navbar } from './components';
 import HomePage from './pages/home-page';
-import BomberPage from './pages/bomber-page';
 import FamilyPage from './pages/family-page';
-import CartPage from './pages/cart-page';
-import OrderPage from './pages/order-page';
 import ErrorPage from './pages/error-page';
 import CartContext from './contexts/cart-context';
 
@@ -42,10 +39,7 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/cup-shelf" element={<BomberPage />} />
           <Route path="/family" element={<FamilyPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/order" element={<OrderPage />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>
