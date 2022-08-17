@@ -1,13 +1,6 @@
 import { createTheme } from '@mui/material';
 
 const baseTheme = createTheme({
-  palette: {
-    primary: {
-      main: '#4caf50',
-      contrastText: '#eeeeee',
-    },
-  },
-
   breakpoints: {
     values: {
       xs: 0,
@@ -28,20 +21,36 @@ const baseTheme = createTheme({
   },
 });
 
-const theme = createTheme(baseTheme, {
+const mixinTheme = createTheme(baseTheme, {
   mixins: {
-    toolbarOffset: {
-      mt: 7,
-      [baseTheme.breakpoints.up('xs')]: {
-        '@media (orientation: landscape)': {
-          mt: 6,
-        },
-      },
-      [baseTheme.breakpoints.up('sm')]: {
-        mt: 8,
-      },
+    navbar: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      height: '64px',
+      padding: baseTheme.spacing(0, 2),
     },
   },
 });
 
-export default theme;
+const createColor = (color) => mixinTheme.palette.augmentColor({ color: { main: color } });
+
+const lightTheme = createTheme(mixinTheme, {
+  palette: {
+    background: {
+      default: '#fafafa',
+    },
+    primary: {
+      ...createColor('#dda32f'),
+      contrastText: baseTheme.palette.common.white,
+    },
+    secondary: createColor('#434343'),
+  },
+});
+
+export const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
+
+export default lightTheme;

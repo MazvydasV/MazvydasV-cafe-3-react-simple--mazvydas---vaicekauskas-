@@ -3,12 +3,12 @@ import { Box, Typography } from '@mui/material';
 import * as Home from './components';
 
 const HomePage = () => (
-  <Box sx={{
-    minHeight: '100vh',
+  <Box sx={(theme) => ({
+    minHeight: `calc(100vh - ${theme.mixins.navbar.height})`,
     position: 'relative',
     display: 'flex',
     flexDirection: 'column',
-  }}
+  })}
   >
     <Home.Background component="img" src="/background.jpg" />
 
@@ -41,9 +41,9 @@ const HomePage = () => (
 
         <Box sx={{
           display: 'flex',
-          gap: 5,
-          height: { xs: 200, md: 300, xxl: 400 },
           justifyContent: 'center',
+          gap: 3,
+          height: { xs: 200, md: 300, xxl: 400 },
         }}
         >
           <Home.ImageLink to="/family" src="/valentine.jpg">Šeimoms</Home.ImageLink>

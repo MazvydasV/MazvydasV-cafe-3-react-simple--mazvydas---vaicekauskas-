@@ -10,19 +10,18 @@ export const Background = styled(Box)({
   width: '100%',
   zIndex: 1,
   objectFit: 'cover',
-  objectPosition: 'left',
+  objectPosition: 'right',
 });
 
 export const ContentContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
-  paddingTop: '58px',
-  width: '35vh',
+  width: '40vw',
+  flexGrow: 1,
+  marginLeft: 'auto',
   zIndex: 2,
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  flexGrow: 1,
-  marginRight: 'auto',
 
   [theme.breakpoints.down('xxl')]: {
     width: 550,
@@ -33,15 +32,15 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const Content = styled(Box)(({ theme }) => ({
-  margin: theme.spacing(8, 8, 6, 8),
-  height: '80%',
-  width: 650,
+  marginRight: theme.spacing(8),
+  width: '100%',
+  height: '100%',
   color: theme.palette.common.white,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: 'center',
-  gap: theme.spacing(6),
+  gap: theme.spacing(4),
+  padding: theme.spacing(4, 0),
 
   [theme.breakpoints.down('xxl')]: {
     marginRight: theme.spacing(6),

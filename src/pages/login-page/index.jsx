@@ -1,0 +1,117 @@
+import React from 'react';
+import {
+  Paper,
+  Typography,
+  TextField,
+  Box,
+  Button,
+} from '@mui/material';
+import SecurityIcon from '@mui/icons-material/Security';
+import { useFormik } from 'formik';
+import * as yup from 'yup';
+
+const initialValues = {
+  email: '',
+  password: '',
+};
+
+const validationSchema = yup.object({
+  email: yup.string()
+    .required('Privaloma')
+    .email('Neteisingas el. pašto formatas'),
+  password: yup.string()
+    .required('Privaloma')
+    .min(8, 'Mažiausiai 8 simboliai')
+    .matches(/[a-z]/, 'Bent viena mažoji raidė')
+    .matches(/[A-Z]/, 'Bent viena didžioji raidė')
+    .matches(/\d/, 'Bent vienas skaičius')
+    .matches(/\W/, 'Bent vienas specialus simbolis'),
+});
+
+const LoginPage = () => {
+  const onSubmit = async (values) => {
+    console.log('Forma patvirtinta, atliekami veiksmai...');
+    console.log(values);
+  };
+
+  const {
+    dirty, values, errors, touched, isValid,
+    handleChange, handleBlur, handleSubmit,
+  } = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit,
+  });
+
+  return (
+    <Paper elevation={3} sx={{ p: 5, width: 400 }}>
+      <Paper sx={{
+        position: 'fixed',
+        top: 300,
+        left: 20,
+        width: 400,
+        p: 3,
+      }}
+      >
+        <Typography variant="h5">Formik state</Typography>
+        <Box component="pre">
+          {JSON.stringify({
+            values,
+            errors,
+            touched,
+            dirty,
+            isValid,
+          }, null, 4)}
+        </Box>
+      </Paper>
+
+      <Box
+        component="form"
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 5,
+        }}
+        onSubmit={handleSubmit}
+      >
+        <SecurityIcon sx={{ fontSize: 50, color: 'primary.main' }} />
+        <Typography component="h1" variant="h4">Prisijungimas</Typography>
+        <TextField
+          name="email"
+          label="El. paštas"
+          type="email"
+          variant="filled"
+          fullWidth
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.email && Boolean(errors.email)}
+          helperText={touched.email && errors.email}
+        />
+        <TextField
+          name="password"
+          label="Slaptažodis"
+          type="password"
+          variant="filled"
+          fullWidth
+          value={values.password}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          error={touched.password && Boolean(errors.password)}
+          helperText={touched.password && errors.password}
+        />
+        <Button
+          type="submit"
+          variant="contained"
+          size="large"
+          disabled={!dirty || !isValid}
+        >
+          Prisijungti
+        </Button>
+      </Box>
+    </Paper>
+  );
+};
+
+export default LoginPage;
