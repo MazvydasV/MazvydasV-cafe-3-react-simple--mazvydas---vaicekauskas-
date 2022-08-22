@@ -4,8 +4,8 @@ import { CupCard, Filters } from './components';
 
 const drawerWidth = 280;
 
-const updateMug = async ({ id, ...updateProps }) => {
-  const response = await fetch(`http://localhost:8000/mugs/${id}`, {
+const updateItem = async ({ id, ...updateProps }) => {
+  const response = await fetch(`http://localhost:8888/items/${id}`, {
     method: 'PATCH',
     headers: {
       Accept: 'application/json',
@@ -18,27 +18,27 @@ const updateMug = async ({ id, ...updateProps }) => {
   return responseData;
 };
 
-const fetchAllMugs = async () => {
-  const response = await fetch('http://localhost:8000/mugs');
-  const mugs = await response.json();
+const fetchAllItems = async () => {
+  const response = await fetch('http://localhost:8888/items');
+  const items = await response.json();
 
-  return mugs;
+  return items;
 };
 
 const CupShelfPage = () => {
-  const [mugs, setMugs] = React.useState([]);
+  const [items, setItems] = React.useState([]);
 
-  const handleFetchMugs = async () => {
-    const fetchedMugs = await fetchAllMugs();
-    setMugs(fetchedMugs);
+  const handleFetchItems = async () => {
+    const fetchedItems = await fetchAllItems();
+    setItems(fetchedItems);
   };
 
-  const handleUpdateMug = async (props) => {
-    await updateMug(props);
-    await handleFetchMugs();
+  const handleUpdateItem = async (props) => {
+    await updateItem(props);
+    await handleFetchItems();
   };
 
-  React.useEffect(() => { handleFetchMugs(); }, []);
+  React.useEffect(() => { handleFetchItems(); }, []);
 
   return (
     <Box sx={{
@@ -50,7 +50,7 @@ const CupShelfPage = () => {
     >
       <Filters drawerWidth={drawerWidth} />
       <Grid container spacing={2} sx={{ pl: { xxl: `${drawerWidth}px` } }}>
-        {mugs.map(({
+        {items.map(({
           id,
           title,
           description,
@@ -66,7 +66,7 @@ const CupShelfPage = () => {
               img={img}
               category={category}
               liked={liked}
-              updateMug={handleUpdateMug}
+              updateItem={handleUpdateItem}
             />
           </Grid>
         ))}

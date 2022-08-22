@@ -2,49 +2,106 @@ import * as React from 'react';
 import {
   AppBar,
   Box,
-  Toolbar,
   IconButton,
+  Drawer,
+  Divider,
+  useMediaQuery,
 } from '@mui/material';
-import AccessibleForwardIcon from '@mui/icons-material/AccessibleForward';
-import CenterFocusWeakIcon from '@mui/icons-material/CenterFocusWeak';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
 import * as Nav from './components';
 
-const pages = [
+const links = [
   { text: 'Pagrindinis', to: '/' },
-  { text: 'Šeimoms', to: '/family' },
-  { text: 'Pradedantiesiems sprogdintojams', to: '/bomber' },
+  { text: 'Žiedimas', to: '/pottery' },
+  { text: 'Puodelių lentyna', to: '/cup-shelf' },
 ];
+
+const expandBr = 'md';
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const isContracted = useMediaQuery((theme) => theme.breakpoints.down(expandBr));
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!isContracted && open) {
+      setOpen(false);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isContracted]);
 
   return (
     <AppBar position="fixed">
-      <Toolbar sx={{ justifyContent: 'space-between', color: 'red' }}>
+      <Box sx={(theme) => theme.mixins.navbar}>
         <IconButton
           size="large"
           edge="start"
           color="inherit"
-          sx={{ display: { sm: 'none' } }}
+          sx={{ display: { [expandBr]: 'none' }, alignSelf: 'center' }}
+          onClick={() => setOpen(!open)}
         >
-          <CenterFocusWeakIcon />
+          {open ? <CloseIcon /> : <MenuIcon />}
         </IconButton>
 
-        <Box sx={{ display: 'flex', alignSelf: 'stretch' }}>
-          {pages.map(({ text, to }) => <Nav.Link key={to} to={to}>{text}</Nav.Link>)}
+        <Box sx={{ display: { xs: 'none', [expandBr]: 'flex' }, alignSelf: 'stretch' }}>
+          {links.map(({ text, to }) => <Nav.Link key={to} to={to}>{text}</Nav.Link>)}
         </Box>
 
-        <IconButton
-          size="large"
-          edge="end"
-          color="inherit"
-          onClick={() => navigate('/cart')}
-        >
-          <AccessibleForwardIcon />
-        </IconButton>
+        {isContracted && (
+          <Drawer anchor="top" open={open}>
+            <Box sx={(theme) => ({
+              paddingTop: `calc(${theme.spacing(4)} + ${theme.mixins.navbar.height})`,
+              paddingBottom: theme.spacing(4),
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              height: '100vh',
+            })}
+            >
+              <Box>
+                {links.map(({ text, to }) => (
+                  <Nav.Link
+                    key={to}
+                    to={to}
+                    contracted
+                    onClick={() => setOpen(false)}
+                  >
+                    {text}
+                  </Nav.Link>
+                ))}
+              </Box>
 
-      </Toolbar>
+              <Box sx={{ display: 'flex', alignSelf: 'stretch', flexDirection: 'column' }}>
+                <Nav.Link to="/cart" onClick={() => setOpen(false)} contracted>Krepšelis</Nav.Link>
+                <Nav.Link to="/auth/login" onClick={() => setOpen(false)} contracted>Prisijungimas</Nav.Link>
+                <Nav.Link to="/auth/register" onClick={() => setOpen(false)} contracted>Registracija</Nav.Link>
+              </Box>
+            </Box>
+          </Drawer>
+        )}
+
+        <Box sx={{ display: { xs: 'none', [expandBr]: 'flex' }, alignSelf: 'stretch' }}>
+          <IconButton
+            size="large"
+            edge="end"
+            color="inherit"
+            sx={{ alignSelf: 'center', mr: 1 }}
+            onClick={() => {
+              if (isContracted && open) setOpen(false);
+              navigate('/cart');
+            }}
+          >
+            <ShoppingCartIcon sx={{ color: 'common.white' }} />
+          </IconButton>
+          <Divider orientation="vertical" flexItem sx={{ my: 2 }} />
+
+          <Nav.Link to="/auth/login" onClick={() => setOpen(false)}>Prisijungimas</Nav.Link>
+          <Nav.Link to="/auth/register" onClick={() => setOpen(false)}>Registracija</Nav.Link>
+        </Box>
+      </Box>
     </AppBar>
   );
 };

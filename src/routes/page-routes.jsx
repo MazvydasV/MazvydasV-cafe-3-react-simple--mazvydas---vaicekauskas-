@@ -15,11 +15,11 @@ const PageRoutes = () => (
   <Routes>
     <Route path="/" element={<MainLayout />}>
       <Route index element={<HomePage />} />
-      <Route path="bomber" element={<CupShelfPage />} />
-      <Route path="family" element={<PotteryPage />} />
+      <Route path="cup-shelf" element={<CupShelfPage />} />
+      <Route path="pottery" element={<PotteryPage />} />
       <Route path="cart" element={<CartPage />} />
 
-      <Route path="inner/" element={<AuthLayout />}>
+      <Route path="auth/" element={<AuthLayout />}>
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
       </Route>
