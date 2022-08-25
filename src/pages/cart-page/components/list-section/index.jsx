@@ -5,25 +5,23 @@ import {
   Typography,
 } from '@mui/material';
 import CartContext from 'contexts/cart-context';
+import CupService from 'services/cup-service';
 import { Item, Footer } from './components';
 
-const fetchItem = async ({ id, count }) => {
-  const response = await fetch(`http://localhost:8000/mugs/${id}`);
-  const item = await response.json();
+// Model
+const getFormattedCartItems = async (cartItemsData) => {
+  const idArr = cartItemsData.map((cartItem) => cartItem.id);
+  const fetchedCartItems = await CupService.fetchByIdArr(idArr);
+  const fetchedCartItemsWithCount = fetchedCartItems.map((fetchedCartItem) => ({
+    ...fetchedCartItem,
+    count: cartItemsData.find((cartItem) => cartItem.id === fetchedCartItem.id).count,
+  }));
 
-  return {
-    ...item,
-    count,
-  };
-};
-
-const fetchCartItems = async (cartItems) => {
-  const items = await Promise.all(cartItems.map((item) => fetchItem(item)));
-
-  return items;
+  return fetchedCartItemsWithCount;
 };
 
 const ListSection = ({ width, expansionBr, setDrawerOpen }) => {
+  // Controller
   const {
     cartItems: cartItemsData,
     addToCart,
@@ -33,14 +31,14 @@ const ListSection = ({ width, expansionBr, setDrawerOpen }) => {
 
   React.useEffect(() => {
     (async () => {
-      const fetchedItems = await fetchCartItems(cartItemsData);
-
-      setCartItems(fetchedItems);
+      const formattedCartItems = await getFormattedCartItems(cartItemsData);
+      setCartItems(formattedCartItems);
     })();
   }, [cartItemsData]);
 
   const total = cartItems.reduce((prevSum, { count, price }) => prevSum + count * price, 0);
 
+  // View
   return (
     <Box sx={(theme) => ({
       mr: { xs: 0, [expansionBr]: `${width}px` },
@@ -75,7 +73,7 @@ const ListSection = ({ width, expansionBr, setDrawerOpen }) => {
               img={img}
               title={title}
               subtitle={about}
-              textProps={[category]}
+              textProps={[category.label]}
               count={count}
               setCount={(newCount) => addToCart({ id, count: newCount })}
               price={price}
@@ -83,7 +81,6 @@ const ListSection = ({ width, expansionBr, setDrawerOpen }) => {
               deleteItem={() => deleteItem(id)}
             />
           ))}
-
         </Box>
 
         <Footer total={total} />

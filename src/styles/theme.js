@@ -47,6 +47,7 @@ const lightTheme = createTheme(mixinTheme, {
   },
 });
 
+// https://mui.com/material-ui/customization/dark-mode/
 export const darkTheme = createTheme({
   palette: {
     mode: 'dark',

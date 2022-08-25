@@ -18,25 +18,27 @@ const HomePage = () => (
           component="h1"
           variant="h2"
           sx={(theme) => ({
-            letterSpacing: '0.1em',
+            letterSpacing: '0.08em',
             color: theme.palette.primary.main,
-            fontSize: { xs: '2rem', md: '2.5rem' },
             textAlign: 'center',
+            fontSize: { xs: '2.25rem', md: '3.5rem' },
           })}
         >
-          Pramogos ne tik jauniems
+          Jeckau Kleckau
         </Typography>
 
         <Typography
-          variant="h5"
+          variant="h6"
           sx={{
             textAlign: 'center',
-            color: 'yellow',
-            fontSize: { xs: '1rem', md: '1.2rem' },
+            fontSize: { xs: '1.1rem', md: '1.3rem' },
           }}
         >
-          Tai yra tekstas apie įvairias pramogas kuriomis gali džiaugtis ne tik jaunimėlis,
-          bet ir senimas. Šis backgroundas yra puikus pavyzdys kokio niekada nedėti.
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum tempora explicabo nostrum
+          accusantium dolor dolores illo minus suscipit aliquam, inventore voluptate consectetur
+          omnis labore, laboriosam accusamus! Deserunt mollitia doloribus laboriosam enim ut,
+          numquam cumque quisquam tenetur maiores officiis autem necessitatibus magnam voluptate
+          ipsa eveniet sequi neque in porro rem facere!
         </Typography>
 
         <Box sx={{
@@ -46,8 +48,8 @@ const HomePage = () => (
           height: { xs: 200, md: 300, xxl: 400 },
         }}
         >
-          <Home.ImageLink to="/family" src="/valentine.jpg">Šeimoms</Home.ImageLink>
-          <Home.ImageLink to="/bomber" src="/about.jpg">Pradedantiesiems sprogdintojams</Home.ImageLink>
+          <Home.ImageLink to="/pottery" src="/valentine.jpg">Nepradėtas</Home.ImageLink>
+          <Home.ImageLink to="/cup-shelf" src="/little_soldier.jpg">Pykšt pokšt keberiokšt</Home.ImageLink>
         </Box>
       </Home.Content>
     </Home.ContentContainer>

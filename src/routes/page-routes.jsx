@@ -2,11 +2,11 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import MainLayout from 'layouts/main-layout';
-import AuthLayout from 'layouts/inner-layout';
+import AuthLayout from 'layouts/auth-layout';
 import RegisterPage from 'pages/register-page';
 import HomePage from 'pages/home-page';
 import CupShelfPage from 'pages/cup-shelf-page';
-import PotteryPage from 'pages/family-page';
+import PotteryPage from 'pages/pottery-page';
 import CartPage from 'pages/cart-page';
 import ErrorPage from 'pages/error-page';
 import LoginPage from 'pages/login-page';

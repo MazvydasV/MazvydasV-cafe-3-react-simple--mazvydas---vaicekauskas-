@@ -30,4 +30,6 @@ export const CartProvider = ({ children }) => {
   );
 };
 
+// TODO: useCart custom hook
+
 export default CartContext;
