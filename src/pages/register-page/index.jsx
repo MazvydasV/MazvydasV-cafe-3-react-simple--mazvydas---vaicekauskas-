@@ -130,6 +130,7 @@ const RegisterPage = () => {
         value={values.birthdate}
         disableFuture
         onChange={(momentInstance) => {
+          // eslint-disable-next-line no-underscore-dangle
           if (momentInstance._isValid) {
             setFieldTouched('birthdate', true, false);
             setFieldValue('birthdate', momentInstance, true);
