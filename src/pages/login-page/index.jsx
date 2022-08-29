@@ -1,14 +1,8 @@
 import React from 'react';
-import {
-  Paper,
-  Typography,
-  TextField,
-  Box,
-  Button,
-} from '@mui/material';
-import SecurityIcon from '@mui/icons-material/Security';
+import { TextField } from '@mui/material';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
+import AuthForm from 'components/auth-form';
 
 const initialValues = {
   email: '',
@@ -44,73 +38,37 @@ const LoginPage = () => {
   });
 
   return (
-    <Paper elevation={3} sx={{ p: 5, width: 400 }}>
-      <Paper sx={{
-        position: 'fixed',
-        top: 300,
-        left: 20,
-        width: 400,
-        p: 3,
-      }}
-      >
-        <Typography variant="h5">Formik state</Typography>
-        <Box component="pre">
-          {JSON.stringify({
-            values,
-            errors,
-            touched,
-            dirty,
-            isValid,
-          }, null, 4)}
-        </Box>
-      </Paper>
-
-      <Box
-        component="form"
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: 5,
-        }}
-        onSubmit={handleSubmit}
-      >
-        <SecurityIcon sx={{ fontSize: 50, color: 'primary.main' }} />
-        <Typography component="h1" variant="h4">Prisijungimas</Typography>
-        <TextField
-          name="email"
-          label="El. paštas"
-          type="email"
-          variant="filled"
-          fullWidth
-          value={values.email}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          error={touched.email && Boolean(errors.email)}
-          helperText={touched.email && errors.email}
-        />
-        <TextField
-          name="password"
-          label="Slaptažodis"
-          type="password"
-          variant="filled"
-          fullWidth
-          value={values.password}
-          onChange={handleChange}
-          onBlur={handleBlur}
-          error={touched.password && Boolean(errors.password)}
-          helperText={touched.password && errors.password}
-        />
-        <Button
-          type="submit"
-          variant="contained"
-          size="large"
-          disabled={!dirty || !isValid}
-        >
-          Prisijungti
-        </Button>
-      </Box>
-    </Paper>
+    <AuthForm
+      title="Prisijungimas"
+      onSubmit={handleSubmit}
+      disabled={!dirty || !isValid}
+      btnText="Prisijungti"
+    >
+      <TextField
+        name="email"
+        label="El. paštas"
+        type="email"
+        variant="filled"
+        fullWidth
+        value={values.email}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={touched.email && Boolean(errors.email)}
+        helperText={touched.email && errors.email}
+      />
+      <TextField
+        name="password"
+        label="Slaptažodis"
+        type="password"
+        variant="filled"
+        fullWidth
+        value={values.password}
+        onChange={handleChange}
+        onBlur={handleBlur}
+        error={touched.password && Boolean(errors.password)}
+        helperText={touched.password && errors.password}
+      />
+    </AuthForm>
   );
 };
 

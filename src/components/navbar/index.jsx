@@ -17,7 +17,7 @@ import * as Nav from './components';
 
 const links = [
   { text: 'Pagrindinis', to: '/' },
-  { text: 'Puodelių lentyna', to: '/cup-shelf' },
+  { text: 'Daikčiukai', to: '/cup-shelf' },
 ];
 
 const expandBr = 'md';
@@ -102,8 +102,8 @@ const Navbar = () => {
           </IconButton>
           <Divider orientation="vertical" flexItem sx={{ my: 2 }} />
 
-          <Nav.Link to="/auth/login" onClick={() => setOpen(false)}>Prisijungimas</Nav.Link>
-          <Nav.Link to="/auth/register" onClick={() => setOpen(false)}>Registracija</Nav.Link>
+          <Nav.Link to="/inner/login" onClick={() => setOpen(false)}>Prisijungimas</Nav.Link>
+          <Nav.Link to="/inner/register" onClick={() => setOpen(false)}>Registracija</Nav.Link>
         </Box>
       </Box>
     </AppBar>

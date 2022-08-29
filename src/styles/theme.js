@@ -37,13 +37,13 @@ const createColor = (color) => mixinTheme.palette.augmentColor({ color: { main: 
 const lightTheme = createTheme(mixinTheme, {
   palette: {
     background: {
-      default: '#fafafa',
+      default: '#ffc400',
     },
     primary: {
-      ...createColor('#dda32f'),
+      ...createColor('#52b202'),
       contrastText: baseTheme.palette.common.white,
     },
-    secondary: createColor('#434343'),
+    secondary: createColor('#ffa000'),
   },
 });
 

@@ -46,7 +46,7 @@ const CupShelfPage = () => {
         {loading ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
             <Fade in>
-              <Image src="/loading.gif" sx={{ width: 200, pt: 6 }} />
+              <Image src="/loading.gif" sx={{ width: 600, pt: 6 }} />
             </Fade>
           </Box>
         ) : (

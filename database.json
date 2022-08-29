@@ -2,13 +2,13 @@
 	"cups": [
 	  {
 		"id": "5154E9B3-8BD7-3C0A-E142-E4848C147243",
-		"title": "Karščio sargas",
-		"description": "ultrices iaculis odio. Nam interdum enim non nisi. Aenean eget metus. In nec orci. Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut erat. Sed nunc est, mollis",
-		"img": "https://m.media-amazon.com/images/I/918nomWTWLL._AC_SL1500_.jpg",
+		"title": "Kočėlūnas",
+		"description": "Ergonominė rankena, atlaiko smūgius.",
+		"img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjGN8JoT3HFVgMkOtIdCTuZuq6_PDKU-p6tQ&usqp=CAU",
 		"liked": false,
-		"price": 5.99,
+		"price": 99.99,
 		"currency": "€",
-		"about": "Geras puodelis",
+		"about": "Tvirtas kočėlas",
 		"categoryId": "2",
 		"materialTypeId": "1",
 		"colorId": "1"
@@ -31,7 +31,7 @@
 		"description": "Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut",
 		"img": "https://www.craftson.lt/image/cache/catalog/Seller_419/Slide3-800x800.PNG",
 		"liked": false,
-		"price": 5.99,
+		"price": 58.99,
 		"currency": "€",
 		"about": "Tinka gerti",
 		"categoryId": "1",
@@ -44,7 +44,7 @@
 		"description": "tellus sem mollis dui, in sodales elit erat vitae risus. Duis a mi fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet, erat",
 		"img": "https://www.craftson.lt/image/cache/catalog/Seller_419/Slide3-800x800.PNG",
 		"liked": true,
-		"price": 5.99,
+		"price": 9.99,
 		"currency": "€",
 		"categoryId": "2",
 		"materialTypeId": "1",
@@ -66,15 +66,15 @@
 	"categories": [
 	  {
 		"id": "1",
-		"label": "Puodelis"
+		"label": "Kojinis prietaisas"
 	  },
 	  {
 		"id": "2",
-		"label": "Bokalas"
+		"label": "Rankinis prietaisas"
 	  },
 	  {
 		"id": "3",
-		"label": "Desertinis puodelis"
+		"label": "Neaiškus"
 	  }
 	],
 	"materialTypes": [
@@ -84,21 +84,21 @@
 	  },
 	  {
 		"id": "2",
-		"label": "Molinis"
+		"label": "Metalinis"
 	  }
 	],
 	"colors": [
 	  {
 		"id": "1",
-		"label": "raudona"
+		"label": "Raudona"
 	  },
 	  {
 		"id": "2",
-		"label": "žalia"
+		"label": "Žalia"
 	  },
 	  {
 		"id": "3",
-		"label": "mėlyna"
+		"label": "Mėlyna"
 	  }
 	]
   }
