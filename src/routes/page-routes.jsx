@@ -6,8 +6,8 @@ import InnerLayout from 'layouts/inner-layout';
 import RegisterPage from 'pages/register-page';
 import HomePage from 'pages/home-page';
 import CupShelfPage from 'pages/cup-shelf-page';
-import PotteryPage from 'pages/pottery-page';
 import CartPage from 'pages/cart-page';
+import CupPage from 'pages/cup-page';
 import ErrorPage from 'pages/error-page';
 import LoginPage from 'pages/login-page';
 
@@ -16,10 +16,10 @@ const PageRoutes = () => (
     <Route path="/" element={<MainLayout />}>
       <Route index element={<HomePage />} />
       <Route path="cup-shelf" element={<CupShelfPage />} />
-      <Route path="pottery" element={<PotteryPage />} />
       <Route path="cart" element={<CartPage />} />
+      <Route path="cup/:cupId" element={<CupPage />} />
 
-      <Route path="auth/" element={<InnerLayout />}>
+      <Route path="inner/" element={<InnerLayout />}>
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
       </Route>

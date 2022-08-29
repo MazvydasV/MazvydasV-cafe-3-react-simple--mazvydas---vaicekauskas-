@@ -6,22 +6,24 @@ import {
   Drawer,
   Divider,
   useMediaQuery,
+  Badge,
 } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from 'react-router-dom';
+import CartContext from 'contexts/cart-context';
 import * as Nav from './components';
 
 const links = [
   { text: 'Pagrindinis', to: '/' },
-  { text: 'Žiedimas', to: '/pottery' },
   { text: 'Puodelių lentyna', to: '/cup-shelf' },
 ];
 
 const expandBr = 'md';
 
 const Navbar = () => {
+  const { cartItemsCount } = React.useContext(CartContext);
   const navigate = useNavigate();
   const isContracted = useMediaQuery((theme) => theme.breakpoints.down(expandBr));
   const [open, setOpen] = React.useState(false);
@@ -94,7 +96,9 @@ const Navbar = () => {
               navigate('/cart');
             }}
           >
-            <ShoppingCartIcon sx={{ color: 'common.white' }} />
+            <Badge badgeContent={cartItemsCount} color="secondary">
+              <ShoppingCartIcon sx={{ color: 'common.white' }} />
+            </Badge>
           </IconButton>
           <Divider orientation="vertical" flexItem sx={{ my: 2 }} />
 

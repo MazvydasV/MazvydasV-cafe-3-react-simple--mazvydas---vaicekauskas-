@@ -10,6 +10,7 @@ const RangeField = ({
   label,
   value,
   onChange,
+  onChangeCommitted,
   min = 0,
   max = 100,
 }) => (
@@ -20,7 +21,7 @@ const RangeField = ({
         value={value}
         min={min}
         max={max}
-        // onChangeCommitted={(_, newPriceRange) => setPriceRange(newPriceRange)}
+        onChangeCommitted={onChangeCommitted}
         onChange={onChange}
         valueLabelDisplay="on"
         sx={{ mt: 4 }}

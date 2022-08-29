@@ -8,6 +8,8 @@ export const CartProvider = ({ children }) => {
   const cartContextValue = React.useMemo(() => ({
     cartItems,
 
+    cartItemsCount: cartItems.reduce((sum, { count }) => sum + count, 0),
+
     addToCart: (item) => {
       if (cartItems.find((x) => x.id === item.id)) {
         if (item.count === 0) {
@@ -23,6 +25,7 @@ export const CartProvider = ({ children }) => {
     getItemCount: (id) => cartItems.find((x) => x.id === id)?.count ?? 0,
 
     deleteItem: (id) => setCartItems(cartItems.filter((x) => x.id !== id)),
+
   }), [cartItems]);
 
   return (

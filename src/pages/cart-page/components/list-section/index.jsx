@@ -12,9 +12,10 @@ import { Item, Footer } from './components';
 const getFormattedCartItems = async (cartItemsData) => {
   const idArr = cartItemsData.map((cartItem) => cartItem.id);
   const fetchedCartItems = await CupService.fetchByIdArr(idArr);
+
   const fetchedCartItemsWithCount = fetchedCartItems.map((fetchedCartItem) => ({
     ...fetchedCartItem,
-    count: cartItemsData.find((cartItem) => cartItem.id === fetchedCartItem.id).count,
+    count: cartItemsData.find((cartItem) => cartItem.id === fetchedCartItem.id)?.count ?? 0,
   }));
 
   return fetchedCartItemsWithCount;
@@ -31,8 +32,10 @@ const ListSection = ({ width, expansionBr, setDrawerOpen }) => {
 
   React.useEffect(() => {
     (async () => {
-      const formattedCartItems = await getFormattedCartItems(cartItemsData);
-      setCartItems(formattedCartItems);
+      if (cartItemsData.length > 0) {
+        const formattedCartItems = await getFormattedCartItems(cartItemsData);
+        setCartItems(formattedCartItems);
+      }
     })();
   }, [cartItemsData]);
 

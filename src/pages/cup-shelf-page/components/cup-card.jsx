@@ -6,6 +6,7 @@ import {
   Card,
   CardContent,
   IconButton,
+  Chip,
 } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ClearIcon from '@mui/icons-material/Clear';
@@ -14,16 +15,22 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Image, TypographyLimited } from 'components';
 import CartContext from 'contexts/cart-context';
 import AmountField from 'components/amount-field';
+import { useNavigate } from 'react-router-dom';
 
 const CupCard = ({
   id,
   title,
-  category,
-  img,
   description,
+  img,
+  price,
+  currency,
   liked,
+  category,
+  materialType,
+  color,
   updateMug,
 }) => {
+  const navigate = useNavigate();
   const { addToCart, getItemCount, deleteItem } = React.useContext(CartContext);
   const itemCountInCart = getItemCount(id);
   const [count, setCount] = React.useState(itemCountInCart === 0 ? 1 : itemCountInCart);
@@ -54,11 +61,22 @@ const CupCard = ({
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          mb: 2,
         }}
         >
-          <Typography variant="h5" component="div">{title}</Typography>
-          <Typography variant="subtitle" component="div">{category}</Typography>
+          <Typography variant="h6" component="div">{title}</Typography>
+          <Typography variant="h6" component="div" color="primary">{`${price} ${currency}`}</Typography>
+        </Box>
+        <Typography variant="subtitle" component="div">{category.label}</Typography>
+        <Box sx={{ display: 'flex', gap: 1, my: 1 }}>
+          {[materialType.label, color.label].map((label) => (
+            <Chip
+              key={label}
+              label={label}
+              color="primary"
+              size="small"
+              sx={{ borderRadius: 1 }}
+            />
+          ))}
         </Box>
         <TypographyLimited variant="body2" color="text.secondary">{description}</TypographyLimited>
       </CardContent>
@@ -94,7 +112,15 @@ const CupCard = ({
           )}
         </Box>
 
-        <Button size="small" variant="contained" fullWidth sx={{ mt: 1 }}>Peržiūrėti</Button>
+        <Button
+          size="small"
+          variant="contained"
+          fullWidth
+          sx={{ mt: 1 }}
+          onClick={() => navigate(`/cup/${id}`)}
+        >
+          Peržiūrėti
+        </Button>
       </Box>
     </Card>
   );

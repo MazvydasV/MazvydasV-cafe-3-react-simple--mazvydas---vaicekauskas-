@@ -12,7 +12,8 @@ module.exports = {
         "import/resolver": {
             "node": {
                 "paths": ["src"],
-                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+                "extensions": [".js", ".jsx", ".ts", ".tsx"],
+                "import/extensions": [".js", ".jsx", ".ts", ".tsx"]
             }
         }
     },
@@ -33,6 +34,16 @@ module.exports = {
         "react/function-component-definition": [1, {
             "namedComponents": "arrow-function"
         }],
-        "react/jsx-no-duplicate-props": [1, { "ignoreCase": false }]
+        "react/jsx-no-duplicate-props": [1, { "ignoreCase": false }],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+              "js": "never",
+              "jsx": "never",
+              "ts": "never",
+              "tsx": "never"
+            }
+         ]
     }
 }
