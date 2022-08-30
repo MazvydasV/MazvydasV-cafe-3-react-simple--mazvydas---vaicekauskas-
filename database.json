@@ -1,104 +1,129 @@
 {
-	"cups": [
-	  {
-		"id": "5154E9B3-8BD7-3C0A-E142-E4848C147243",
-		"title": "Kočėlūnas",
-		"description": "Ergonominė rankena, atlaiko smūgius.",
-		"img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjGN8JoT3HFVgMkOtIdCTuZuq6_PDKU-p6tQ&usqp=CAU",
-		"liked": false,
-		"price": 99.99,
-		"currency": "€",
-		"about": "Tvirtas kočėlas",
-		"categoryId": "2",
-		"materialTypeId": "1",
-		"colorId": "1"
-	  },
-	  {
-		"id": "D23A657F-CBEC-9639-2E85-7CA56B098603",
-		"title": "Ruginukas",
-		"description": "luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos",
-		"img": "https://m.media-amazon.com/images/I/918nomWTWLL._AC_SL1500_.jpg",
-		"liked": true,
-		"price": 5.99,
-		"currency": "€",
-		"categoryId": "1",
-		"materialTypeId": "1",
-		"colorId": "2"
-	  },
-	  {
-		"id": "12A4CD9E-F969-7106-0E70-A8214ED12111",
-		"title": "Mamos veidrodis",
-		"description": "Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut",
-		"img": "https://www.craftson.lt/image/cache/catalog/Seller_419/Slide3-800x800.PNG",
-		"liked": false,
-		"price": 58.99,
-		"currency": "€",
-		"about": "Tinka gerti",
-		"categoryId": "1",
-		"materialTypeId": "2",
-		"colorId": "1"
-	  },
-	  {
-		"id": "5F7922A2-19DB-CAD4-4291-1B137C44D066",
-		"title": "Kompoto slėptuvė",
-		"description": "tellus sem mollis dui, in sodales elit erat vitae risus. Duis a mi fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet, erat",
-		"img": "https://www.craftson.lt/image/cache/catalog/Seller_419/Slide3-800x800.PNG",
-		"liked": true,
-		"price": 9.99,
-		"currency": "€",
-		"categoryId": "2",
-		"materialTypeId": "1",
-		"colorId": "2"
-	  },
-	  {
-		"id": "815C5D64-820D-2DCD-10AA-59EE2D0BC780",
-		"title": "Šulinukas",
-		"description": "Nullam vitae diam. Proin dolor. Nulla semper tellus id nunc interdum feugiat. Sed nec metus facilisis lorem tristique aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet odio. Etiam",
-		"img": "https://m.media-amazon.com/images/I/918nomWTWLL._AC_SL1500_.jpg",
-		"liked": false,
-		"price": 5.99,
-		"currency": "€",
-		"categoryId": "2",
-		"materialTypeId": "2",
-		"colorId": "3"
-	  }
-	],
-	"categories": [
-	  {
-		"id": "1",
-		"label": "Kojinis prietaisas"
-	  },
-	  {
-		"id": "2",
-		"label": "Rankinis prietaisas"
-	  },
-	  {
-		"id": "3",
-		"label": "Neaiškus"
-	  }
-	],
-	"materialTypes": [
-	  {
-		"id": "1",
-		"label": "Medinis"
-	  },
-	  {
-		"id": "2",
-		"label": "Metalinis"
-	  }
-	],
-	"colors": [
-	  {
-		"id": "1",
-		"label": "Raudona"
-	  },
-	  {
-		"id": "2",
-		"label": "Žalia"
-	  },
-	  {
-		"id": "3",
-		"label": "Mėlyna"
-	  }
-	]
-  }
+  "cups": [
+    {
+      "id": "5154E9B3-8BD7-3C0A-E142-E4848C147243",
+      "title": "Kočėlūnas",
+      "description": "Ergonominė rankena, atlaiko smūgius.",
+      "images": [ 
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjGN8JoT3HFVgMkOtIdCTuZuq6_PDKU-p6tQ&usqp=CAU",
+        "https://cdn.xxl.thumbs.canstockphoto.com/young-angry-woman-with-rolling-pin-isolated-on-white-stock-photos_csp40012535.jpg",
+        "https://image1.masterfile.com/getImage/ODQ2LTAyNzkyNTE1ZW4uMDAwMDAwMDA=ACf58c/846-02792515en_Masterfile.jpg",
+        "https://cdn.create.vista.com/api/media/small/222786270/stock-photo-happy-young-woman-rolling-pin" 
+      ],
+      "liked": true,
+      "price": 99.99,
+      "currency": "€",
+      "about": "Tvirtas kočėlas",
+      "categoryId": "2",
+      "materialTypeId": "1",
+      "colorId": "1"
+    },
+    {
+      "id": "D23A657F-CBEC-9639-2E85-7CA56B098603",
+      "title": "Uždrožtkeptuvė",
+      "description": "luctus ut, pellentesque eget, dictum placerat, augue. Sed molestie. Sed id risus quis diam luctus lobortis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos",
+      "images": [ 
+        "https://st3.depositphotos.com/9881890/17792/i/1600/depositphotos_177921510-stock-photo-sexy-young-woman-apron-pouring.jpg",
+        "https://previews.123rf.com/images/januaryxii/januaryxii1301/januaryxii130100206/17532829-old-woman-with-frying-pan.jpg",
+        "https://previews.123rf.com/images/vbaleha/vbaleha1506/vbaleha150600251/41773330-angry-old-woman-with-a-pan-at-home.jpg",
+        "https://cdn.xxl.thumbs.canstockphoto.com/furious-woman-cook-hitting-with-the-frying-pan-angry-woman-cook-hitting-hard-with-the-frying-pan-stock-photo_csp25824742.jpg"
+      ],
+      "liked": false,
+      "price": 5.99,
+      "currency": "€",
+      "categoryId": "1",
+      "materialTypeId": "2",
+      "colorId": "2"
+    },
+    {
+      "id": "12A4CD9E-F969-7106-0E70-A8214ED12111",
+      "title": "Vėzdas",
+      "description": "Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim. Nunc ut",
+      "images": [ 
+        "https://static.fandomspot.com/images/04/6249/00-featured-battle-mace-screenshot-skyrim-mod-marauder.jpg",
+        "https://bbts1.azureedge.net/images/p/full/2022/01/3f163fa3-13e7-4fdc-963f-d5c8f4a366e5.jpg",
+        "https://static3.bigstockphoto.com/2/0/3/large1500/302064082.jpg",
+        "https://c8.alamy.com/comp/K9B65X/funny-young-woman-in-a-swimsuit-and-helmet-with-horns-holding-mace-K9B65X.jpg" 
+      ],
+      "liked": false,
+      "price": 58.99,
+      "currency": "€",
+      "about": "Tinka gerti",
+      "categoryId": "1",
+      "materialTypeId": "2",
+      "colorId": "1"
+    },
+    {
+      "id": "5F7922A2-19DB-CAD4-4291-1B137C44D066",
+      "title": "Draugelis",
+      "description": "tellus sem mollis dui, in sodales elit erat vitae risus. Duis a mi fringilla mi lacinia mattis. Integer eu lacus. Quisque imperdiet, erat",
+      "images": [ 
+        "https://www.cbc.ca/kidsnews/content/dog-balls-winter-June-2020.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf7kz6wUjbg3sJnAJgQ_qfvA5l9Q2dUdwVXg&usqp=CAU",
+        "https://post.healthline.com/wp-content/uploads/2019/06/Male_Ball_Pit_1200x628-facebook.jpg",
+        "https://image.shutterstock.com/image-photo/cute-young-asian-woman-holding-260nw-1844950.jpg" 
+      ],
+      "liked": true,
+      "price": 9.99,
+      "currency": "€",
+      "categoryId": "2",
+      "materialTypeId": "1",
+      "colorId": "2"
+    },
+    {
+      "id": "815C5D64-820D-2DCD-10AA-59EE2D0BC780",
+      "title": "Mažmožiai",
+      "description": "Nullam vitae diam. Proin dolor. Nulla semper tellus id nunc interdum feugiat. Sed nec metus facilisis lorem tristique aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet odio. Etiam",
+      "images": [ 
+        "https://cdn.apartmenttherapy.info/image/upload/v1556567713/at/news-culture/2019-04/Sip_n_Dip_credit_from_the_collection_of_Kate_Strzinek.jpg",
+        "https://i0.wp.com/goodspero.com/wp-content/uploads/2013/06/screen-shot-2013-06-12-at-2-27-26-pm.png",
+        "https://preview.redd.it/574c2lwuhn611.jpg?auto=webp&s=f1748faa8b4939d422aa4f8148a3dfffd7908672",
+        "https://64.media.tumblr.com/66312c1741c5fc41de84eb04fdcff29b/tumblr_npn3452IvZ1qbvnavo1_1280.jpg" 
+      ],
+      "liked": false,
+      "price": 5.99,
+      "currency": "€",
+      "categoryId": "2",
+      "materialTypeId": "2",
+      "colorId": "3"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "label": "Kojinis prietaisas"
+    },
+    {
+      "id": "2",
+      "label": "Rankinis prietaisas"
+    },
+    {
+      "id": "3",
+      "label": "Neaiškus"
+    }
+  ],
+  "materialTypes": [
+    {
+      "id": "1",
+      "label": "Medinis"
+    },
+    {
+      "id": "2",
+      "label": "Metalinis"
+    }
+  ],
+  "colors": [
+    {
+      "id": "1",
+      "label": "Raudona"
+    },
+    {
+      "id": "2",
+      "label": "Žalia"
+    },
+    {
+      "id": "3",
+      "label": "Mėlyna"
+    }
+  ]
+}

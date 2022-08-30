@@ -9,7 +9,7 @@ import { Image } from 'components';
 import AmountField from 'components/amount-field';
 
 const Item = ({
-  img,
+  images,
   title,
   subtitle,
   textProps,
@@ -41,7 +41,7 @@ const Item = ({
       }}
       >
         <Image
-          src={img}
+          src={(images && images[0]) ?? '/noimg.jpg'}
           sx={{
             height: 100,
             width: 100,

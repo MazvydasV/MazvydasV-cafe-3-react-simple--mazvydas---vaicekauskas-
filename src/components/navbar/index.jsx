@@ -97,7 +97,7 @@ const Navbar = () => {
             }}
           >
             <Badge badgeContent={cartItemsCount} color="secondary">
-              <ShoppingCartIcon sx={{ color: 'common.white' }} />
+              <ShoppingCartIcon sx={{ color: 'secondary.main' }} />
             </Badge>
           </IconButton>
           <Divider orientation="vertical" flexItem sx={{ my: 2 }} />

@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { Box, Fade, Grid } from '@mui/material';
+import {
+  Box, Fade, Grid, Typography,
+} from '@mui/material';
 import CupService from 'services/cup-service';
 import { useSearchParams } from 'react-router-dom';
 import { Image } from 'components';
@@ -46,41 +48,55 @@ const CupShelfPage = () => {
         {loading ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
             <Fade in>
-              <Image src="/loading.gif" sx={{ width: 600, pt: 6 }} />
+              <Image src="/loading.gif" sx={{ width: 200, pt: 6 }} />
             </Fade>
           </Box>
         ) : (
           <Fade in>
-            <Grid container spacing={2}>
-              {cups.map(({
-                id,
-                title,
-                description,
-                img,
-                price,
-                currency,
-                liked,
-                category,
-                materialType,
-                color,
-              }) => (
-                <Grid key={id} item xs={12} sm={6} md={4} lg={3} xl={2.4}>
-                  <CupCard
-                    id={id}
-                    title={title}
-                    description={description}
-                    img={img}
-                    price={price}
-                    currency={currency}
-                    liked={liked}
-                    category={category}
-                    materialType={materialType}
-                    color={color}
-                    updateMug={handleUpdateCup}
-                  />
-                </Grid>
-              ))}
-            </Grid>
+            {cups.length > 0 ? (
+              <Grid container spacing={2}>
+                {cups.map(({
+                  id,
+                  title,
+                  description,
+                  images,
+                  price,
+                  currency,
+                  liked,
+                  category,
+                  materialType,
+                  color,
+                }) => (
+                  <Grid key={id} item xs={12} sm={6} md={4} lg={3} xl={2.4}>
+                    <CupCard
+                      id={id}
+                      title={title}
+                      description={description}
+                      images={images}
+                      price={price}
+                      currency={currency}
+                      liked={liked}
+                      category={category}
+                      materialType={materialType}
+                      color={color}
+                      updateMug={handleUpdateCup}
+                    />
+                  </Grid>
+                ))}
+              </Grid>
+            ) : (
+              <Typography
+                variant="h3"
+                sx={{
+                  color: 'error.main',
+                  width: '100%',
+                  textAlign: 'center',
+                  mt: 6,
+                }}
+              >
+                Nerasta prekių
+              </Typography>
+            )}
           </Fade>
         )}
 

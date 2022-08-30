@@ -63,7 +63,7 @@ const ListSection = ({ width, expansionBr, setDrawerOpen }) => {
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           {cartItems.map(({
             id,
-            img,
+            images,
             title,
             about,
             category,
@@ -73,7 +73,7 @@ const ListSection = ({ width, expansionBr, setDrawerOpen }) => {
           }) => (
             <Item
               key={id}
-              img={img}
+              images={images}
               title={title}
               subtitle={about}
               textProps={[category.label]}

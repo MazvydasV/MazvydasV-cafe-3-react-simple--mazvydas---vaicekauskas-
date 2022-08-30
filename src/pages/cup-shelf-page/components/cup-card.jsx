@@ -21,7 +21,7 @@ const CupCard = ({
   id,
   title,
   description,
-  img,
+  images,
   price,
   currency,
   liked,
@@ -45,7 +45,7 @@ const CupCard = ({
     }}
     >
       <Box sx={{ position: 'relative', width: '100%', pt: '95%' }}>
-        <Image src={img} sx={{ position: 'absolute', top: 0, left: 0 }} />
+        <Image src={(images && images[0]) ?? '/no-img.jpg'} sx={{ position: 'absolute', top: 0, left: 0 }} />
       </Box>
 
       <IconButton
