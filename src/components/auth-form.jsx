@@ -32,7 +32,7 @@ const AuthForm = ({
       }}
       onSubmit={onSubmit}
     >
-      <SecurityIcon sx={{ fontSize: 50, color: 'secondary.main' }} />
+      <SecurityIcon sx={{ fontSize: 50, color: 'primary.main' }} />
       <Typography component="h1" variant="h4">{title}</Typography>
       {children}
       <Button

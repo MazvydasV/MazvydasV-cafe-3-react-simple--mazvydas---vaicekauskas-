@@ -41,7 +41,7 @@ const Item = ({
       }}
       >
         <Image
-          src={(images && images[0]) ?? '/noimg.jpg'}
+          src={(images && images[0]) ?? '/no-img.jpg'}
           sx={{
             height: 100,
             width: 100,

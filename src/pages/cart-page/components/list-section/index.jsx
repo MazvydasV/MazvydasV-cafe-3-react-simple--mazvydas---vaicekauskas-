@@ -4,8 +4,8 @@ import {
   Button,
   Typography,
 } from '@mui/material';
-import CartContext from 'contexts/cart-context';
 import CupService from 'services/cup-service';
+import useCart from 'hooks/useCart';
 import { Item, Footer } from './components';
 
 // Model
@@ -25,9 +25,9 @@ const ListSection = ({ width, expansionBr, setDrawerOpen }) => {
   // Controller
   const {
     cartItems: cartItemsData,
-    addToCart,
-    deleteItem,
-  } = React.useContext(CartContext);
+    changeCartItemCount,
+    deleteCartItem,
+  } = useCart();
   const [cartItems, setCartItems] = React.useState([]);
 
   React.useEffect(() => {
@@ -78,10 +78,10 @@ const ListSection = ({ width, expansionBr, setDrawerOpen }) => {
               subtitle={about}
               textProps={[category.label]}
               count={count}
-              setCount={(newCount) => addToCart({ id, count: newCount })}
+              setCount={(newCount) => changeCartItemCount({ id, count: newCount })}
               price={price}
               currency={currency}
-              deleteItem={() => deleteItem(id)}
+              deleteItem={() => deleteCartItem(id)}
             />
           ))}
         </Box>

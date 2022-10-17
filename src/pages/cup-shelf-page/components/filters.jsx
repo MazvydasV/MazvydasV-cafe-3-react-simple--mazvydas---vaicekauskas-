@@ -12,6 +12,7 @@ import FilterDrawer from './filter-drawer';
  Realiam-geram projekte - filtrų priskyrimo logiką reikėtų iškelti į savo aprašytą biblioteką, klasę
  ar hook'są. Taip supaprastinant filtrų panaudojimą ir išvengiant analogiško funkcionalumo
  pakartotinį rašymą.
+
  Tokias, vidutinio sudetingumo, klases/funkcijas/hooksus būtina sudokumentuoti
 */
 

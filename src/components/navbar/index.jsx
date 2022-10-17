@@ -102,8 +102,8 @@ const Navbar = () => {
           </IconButton>
           <Divider orientation="vertical" flexItem sx={{ my: 2 }} />
 
-          <Nav.Link to="/inner/login" onClick={() => setOpen(false)}>Prisijungimas</Nav.Link>
-          <Nav.Link to="/inner/register" onClick={() => setOpen(false)}>Registracija</Nav.Link>
+          <Nav.Link to="/auth/login" onClick={() => setOpen(false)}>Prisijungimas</Nav.Link>
+          <Nav.Link to="/auth/register" onClick={() => setOpen(false)}>Registracija</Nav.Link>
         </Box>
       </Box>
     </AppBar>

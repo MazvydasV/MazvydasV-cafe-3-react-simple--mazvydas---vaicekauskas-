@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import MainLayout from 'layouts/main-layout';
-import InnerLayout from 'layouts/inner-layout';
+import AuthLayout from 'layouts/auth-layout';
 import RegisterPage from 'pages/register-page';
 import HomePage from 'pages/home-page';
 import CupShelfPage from 'pages/cup-shelf-page';
@@ -19,7 +19,7 @@ const PageRoutes = () => (
       <Route path="cart" element={<CartPage />} />
       <Route path="cup/:cupId" element={<CupPage />} />
 
-      <Route path="inner/" element={<InnerLayout />}>
+      <Route path="auth/" element={<AuthLayout />}>
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
       </Route>

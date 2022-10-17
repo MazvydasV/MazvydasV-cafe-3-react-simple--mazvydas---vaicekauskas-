@@ -37,7 +37,7 @@ const ImageLink = ({ to, src, children }) => {
         variant="h4"
         sx={(theme) => ({
           textAlign: 'center',
-          color: theme.palette.primary.main,
+          color: theme.palette.secondary.main,
           fontSize: { xs: '1.4rem', md: '2rem' },
         })}
         ref={headerRef}

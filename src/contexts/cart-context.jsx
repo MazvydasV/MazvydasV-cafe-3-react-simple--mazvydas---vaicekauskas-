@@ -1,38 +1,31 @@
 import * as React from 'react';
+import useLocalStorage from 'hooks/useLocalStorage';
 
 const CartContext = React.createContext();
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = React.useState([]);
+  const [cartItems, setCartItems] = useLocalStorage('cartItems', []);
 
   const cartContextValue = React.useMemo(() => ({
     cartItems,
 
     cartItemsCount: cartItems.reduce((sum, { count }) => sum + count, 0),
 
-    addToCart: (item) => {
-      if (cartItems.find((x) => x.id === item.id)) {
-        if (item.count === 0) {
-          setCartItems(cartItems.filter((x) => x.id !== item.id));
-        } else {
-          setCartItems(cartItems.map((x) => (x.id === item.id ? { ...x, count: item.count } : x)));
-        }
-      } else {
-        setCartItems([...cartItems, item]);
-      }
-    },
+    getCartItemCount: (id) => cartItems.find((x) => x.id === id)?.count ?? 0,
 
-    getItemCount: (id) => cartItems.find((x) => x.id === id)?.count ?? 0,
+    addCartItem: ({ id, count }) => setCartItems([...cartItems, { id, count }]),
 
-    deleteItem: (id) => setCartItems(cartItems.filter((x) => x.id !== id)),
+    changeCartItemCount: ({ id, count }) => setCartItems(
+      cartItems.map((x) => (x.id === id ? { id, count } : x)),
+    ),
 
-  }), [cartItems]);
+    deleteCartItem: (id) => setCartItems(cartItems.filter((x) => x.id !== id)),
+
+  }), [cartItems, setCartItems]);
 
   return (
     <CartContext.Provider value={cartContextValue}>{children}</CartContext.Provider>
   );
 };
-
-// TODO: useCart custom hook
 
 export default CartContext;

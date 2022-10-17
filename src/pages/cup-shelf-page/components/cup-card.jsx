@@ -13,9 +13,9 @@ import ClearIcon from '@mui/icons-material/Clear';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Image, TypographyLimited } from 'components';
-import CartContext from 'contexts/cart-context';
 import AmountField from 'components/amount-field';
 import { useNavigate } from 'react-router-dom';
+import useCart from 'hooks/useCart';
 
 const CupCard = ({
   id,
@@ -31,9 +31,20 @@ const CupCard = ({
   updateMug,
 }) => {
   const navigate = useNavigate();
-  const { addToCart, getItemCount, deleteItem } = React.useContext(CartContext);
-  const itemCountInCart = getItemCount(id);
+  const {
+    getCartItemCount,
+    addCartItem,
+    changeCartItemCount,
+    deleteCartItem,
+  } = useCart();
+  const itemCountInCart = getCartItemCount(id);
   const [count, setCount] = React.useState(itemCountInCart === 0 ? 1 : itemCountInCart);
+
+  const handleCartItemChange = () => {
+    if (itemCountInCart === 0) addCartItem({ id, count });
+    else if (count === 0) deleteCartItem(id);
+    else changeCartItemCount({ id, count });
+  };
 
   React.useEffect(() => {
     setCount(itemCountInCart === 0 ? 1 : itemCountInCart);
@@ -94,7 +105,7 @@ const CupCard = ({
             size="small"
             variant="contained"
             sx={{ height: 30, flexGrow: 1 }}
-            onClick={() => addToCart({ id, count })}
+            onClick={handleCartItemChange}
             disabled={count === itemCountInCart}
           >
             <ShoppingCartIcon />
@@ -105,7 +116,7 @@ const CupCard = ({
               variant="contained"
               color="error"
               sx={{ height: 30, width: 30, minWidth: 0 }}
-              onClick={() => deleteItem(id)}
+              onClick={() => deleteCartItem(id)}
             >
               <ClearIcon />
             </Button>

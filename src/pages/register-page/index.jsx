@@ -1,7 +1,8 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { TextField } from '@mui/material';
 import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import AuthForm from 'components/inner-form';
+import AuthForm from 'components/auth-form';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import moment from 'moment';
@@ -130,7 +131,6 @@ const RegisterPage = () => {
         value={values.birthdate}
         disableFuture
         onChange={(momentInstance) => {
-          // eslint-disable-next-line no-underscore-dangle
           if (momentInstance._isValid) {
             setFieldTouched('birthdate', true, false);
             setFieldValue('birthdate', momentInstance, true);

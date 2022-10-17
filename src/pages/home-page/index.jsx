@@ -10,7 +10,7 @@ const HomePage = () => (
     flexDirection: 'column',
   })}
   >
-    <Home.Background component="img" src="/background.jpg" />
+    <Home.Background component="img" src="/toy-gun.jpg" />
 
     <Home.ContentContainer>
       <Home.Content component="main">
@@ -19,12 +19,12 @@ const HomePage = () => (
           variant="h2"
           sx={(theme) => ({
             letterSpacing: '0.08em',
-            color: theme.palette.primary.main,
+            color: theme.palette.secondary.main,
             textAlign: 'center',
             fontSize: { xs: '2.25rem', md: '3.5rem' },
           })}
         >
-          Jeckau Kleckau
+          Daikčiukų turgelis
         </Typography>
 
         <Typography
@@ -49,7 +49,7 @@ const HomePage = () => (
         }}
         >
           <Home.ImageLink to="/pottery" src="/valentine.jpg">Nepradėtas</Home.ImageLink>
-          <Home.ImageLink to="/cup-shelf" src="/little_soldier.jpg">Pykšt pokšt keberiokšt</Home.ImageLink>
+          <Home.ImageLink to="/cup-shelf" src="/little_soldier.jpg">Daikčiukai</Home.ImageLink>
         </Box>
       </Home.Content>
     </Home.ContentContainer>
