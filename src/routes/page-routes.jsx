@@ -10,6 +10,7 @@ import CartPage from 'pages/cart-page';
 import CupPage from 'pages/cup-page';
 import ErrorPage from 'pages/error-page';
 import LoginPage from 'pages/login-page';
+import FunPage from 'pages/pottery-page/pottery-page';
 
 const PageRoutes = () => (
   <Routes>
@@ -18,6 +19,7 @@ const PageRoutes = () => (
       <Route path="cup-shelf" element={<CupShelfPage />} />
       <Route path="cart" element={<CartPage />} />
       <Route path="cup/:cupId" element={<CupPage />} />
+      <Route path="pottery" element={FunPage} />
 
       <Route path="auth/" element={<AuthLayout />}>
         <Route path="login" element={<LoginPage />} />

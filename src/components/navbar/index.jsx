@@ -18,6 +18,7 @@ import * as Nav from './components';
 const links = [
   { text: 'Pagrindinis', to: '/' },
   { text: 'Daikčiukai', to: '/cup-shelf' },
+  { text: 'Akimirkos', to: '/pottery' },
 ];
 
 const expandBr = 'md';

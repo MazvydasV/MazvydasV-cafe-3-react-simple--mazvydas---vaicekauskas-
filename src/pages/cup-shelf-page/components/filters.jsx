@@ -7,20 +7,8 @@ import MaterialTypeService from 'services/material-type-service';
 import ColorService from 'services/color-service';
 import FilterDrawer from './filter-drawer';
 
-/*
- NEXT-LEVEL:
- Realiam-geram projekte - filtrų priskyrimo logiką reikėtų iškelti į savo aprašytą biblioteką, klasę
- ar hook'są. Taip supaprastinant filtrų panaudojimą ir išvengiant analogiško funkcionalumo
- pakartotinį rašymą.
-
- Tokias, vidutinio sudetingumo, klases/funkcijas/hooksus būtina sudokumentuoti
-*/
-
-// Maksimalią ir minimalią kainą turėtumėte gauti iš serverio darant užklausą
-// Mūsų naudojamas JSON-SERVER smirda, ir tokios užklausos neturi.
-// TIK todel šios yra į'hard-code'intos
 const MIN = 0;
-const MAX = 25;
+const MAX = 432;
 
 const Filters = ({ drawerWidth }) => {
   const [searchParams, setSearchParams] = useSearchParams();

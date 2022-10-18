@@ -17,7 +17,7 @@ export const ContentContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
   width: '40vw',
   flexGrow: 1,
-  marginLeft: 'auto',
+  // marginLeft: 'auto',
   zIndex: 2,
   display: 'flex',
   justifyContent: 'center',

@@ -24,7 +24,7 @@ const HomePage = () => (
             fontSize: { xs: '2.25rem', md: '3.5rem' },
           })}
         >
-          Daikčiukų turgelis
+          Airsoft daikčiukų turgelis
         </Typography>
 
         <Typography
@@ -48,7 +48,7 @@ const HomePage = () => (
           height: { xs: 200, md: 300, xxl: 400 },
         }}
         >
-          <Home.ImageLink to="/pottery" src="/valentine.jpg">Nepradėtas</Home.ImageLink>
+          <Home.ImageLink to="/pottery" src="/valentine.jpg">Akimirkos</Home.ImageLink>
           <Home.ImageLink to="/cup-shelf" src="/little_soldier.jpg">Daikčiukai</Home.ImageLink>
         </Box>
       </Home.Content>
