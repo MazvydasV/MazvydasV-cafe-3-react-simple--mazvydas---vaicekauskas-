@@ -10,12 +10,12 @@ import {
 } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ClearIcon from '@mui/icons-material/Clear';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { Image, TypographyLimited } from 'components';
 import AmountField from 'components/amount-field';
 import { useNavigate } from 'react-router-dom';
 import useCart from 'hooks/useCart';
+import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
+import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 
 const CupCard = ({
   id,
@@ -63,7 +63,7 @@ const CupCard = ({
         sx={{ position: 'absolute', top: 8, left: 8 }}
         onClick={() => updateMug({ id, liked: !liked })}
       >
-        {liked ? <FavoriteIcon color="primary" /> : <FavoriteBorderIcon color="primary" />}
+        {liked ? <EmojiEmotionsIcon color="primary" /> : <InsertEmoticonIcon color="primary" />}
       </IconButton>
 
       <CardContent sx={{ p: 2, flexGrow: 1 }}>
