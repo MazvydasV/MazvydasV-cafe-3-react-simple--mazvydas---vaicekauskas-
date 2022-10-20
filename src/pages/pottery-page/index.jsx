@@ -55,7 +55,9 @@ const itemData = [
 ];
 const FunPage = () => (
   <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-    <ImageList sx={{ width: 700, height: { xs: 999, md: 750, xxl: 650 } }} cols={3} rowHeight={164}>
+    <ImageList
+      sx={{ width: 700, height: { xs: 999, md: 750, xxl: 650 }, gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))!important' }}
+    >
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img

@@ -19,7 +19,9 @@ export const CartProvider = ({ children }) => {
       cartItems.map((x) => (x.id === id ? { id, count } : x)),
     ),
 
-    deleteCartItem: (id) => setCartItems(cartItems.filter((x) => x.id !== id)),
+    deleteCartItem: (id) => {
+      setCartItems(cartItems.filter((x) => x.id !== id));
+    },
 
   }), [cartItems, setCartItems]);
 

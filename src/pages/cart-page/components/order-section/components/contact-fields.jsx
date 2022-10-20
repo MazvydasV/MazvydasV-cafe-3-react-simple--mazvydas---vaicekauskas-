@@ -9,9 +9,9 @@ import {
 import { TextFieldDark, DividerDark } from 'components/dark';
 
 const genders = [
-  { value: 'female', label: 'Moteris' },
-  { value: 'male', label: 'Vyras' },
-  { value: 'other', label: 'Kita' },
+  { value: 'female', label: 'Atsiėmimas paštomate' },
+  { value: 'male', label: 'Pristatymas kurjeriu' },
+  { value: 'other', label: 'Atsiimti vietoje' },
 ];
 
 const ContactFields = ({
@@ -44,7 +44,7 @@ const ContactFields = ({
     />
 
     <FormControl sx={{ width: '100%' }}>
-      <FormLabel sx={{ color: 'common.white' }}>Socialinė lytis</FormLabel>
+      <FormLabel sx={{ color: 'common.white' }}>Atsiėmimo būdas</FormLabel>
       <RadioGroup
         name="gender"
         value={gender}

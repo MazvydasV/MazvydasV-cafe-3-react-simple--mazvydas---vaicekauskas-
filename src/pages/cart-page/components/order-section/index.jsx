@@ -15,9 +15,9 @@ const OrderSection = ({
   setDrawerOpen,
 }) => {
   const isLarge = useMediaQuery((theme) => theme.breakpoints.up(expansionBr));
-  const [fullname, setFullname] = React.useState('Serbentautas Bordiūras');
-  const [email, setEmail] = React.useState('');
-  const [currency, setCurrency] = React.useState('USD');
+  const [fullname, setFullname] = React.useState('Nemunas Panemunis');
+  const [email, setEmail] = React.useState('munmun@upe.laukuos');
+  const [currency, setCurrency] = React.useState('EUR');
   const [gender, setGender] = React.useState(null);
   const [subscribtion, setSubscribtion] = React.useState(true);
 

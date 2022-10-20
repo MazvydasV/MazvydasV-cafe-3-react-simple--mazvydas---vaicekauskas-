@@ -35,6 +35,8 @@ const ListSection = ({ width, expansionBr, setDrawerOpen }) => {
       if (cartItemsData.length > 0) {
         const formattedCartItems = await getFormattedCartItems(cartItemsData);
         setCartItems(formattedCartItems);
+      } else {
+        setCartItems([]);
       }
     })();
   }, [cartItemsData]);
